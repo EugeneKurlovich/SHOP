@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Авторизация" Height="281" Width="305.5">
     <Grid>
-        
+        <Label x:Name="label" Content="Авторизацция" HorizontalAlignment="Left" Margin="107,48,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Логин" HorizontalAlignment="Left" Margin="51,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.818,0.365"/>
+        <Label x:Name="label2" Content="Пароль" HorizontalAlignment="Left" Margin="44,124,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="22" Margin="123,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="22" Margin="123,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Войти" HorizontalAlignment="Left" Margin="60,174,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Регистрация" HorizontalAlignment="Left" Margin="152,174,0,0" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </Window>
