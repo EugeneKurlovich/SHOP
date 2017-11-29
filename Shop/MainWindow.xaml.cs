@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Shop
@@ -23,6 +22,27 @@ namespace Shop
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            AdminPassword admPass = new AdminPassword();
+            admPass.Show();
+            mw.Close();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Client cl = new Client();
+            cl.Show();
+            mw.Close();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            Employe empl = new Employe();
+            empl.Show();
+            mw.Close();
         }
     }
 }
