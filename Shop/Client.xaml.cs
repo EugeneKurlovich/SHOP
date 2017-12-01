@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace Shop
 {
-    /// <summary>
-    /// Логика взаимодействия для Client.xaml
-    /// </summary>
     public partial class Client : Window
     {
         public Client()

@@ -14,14 +14,26 @@ using System.Windows.Shapes;
 
 namespace Shop
 {
-    /// <summary>
-    /// Логика взаимодействия для AdminPassword.xaml
-    /// </summary>
     public partial class AdminPassword : Window
     {
         public AdminPassword()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            string admPass = passwordBox.Password;
+            if (admPass.Equals("adm"))
+            {
+                Admin admin = new Admin();
+                admin.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Неправильный пароль");
+            }
         }
     }
 }
