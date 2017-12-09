@@ -34,6 +34,7 @@
                 <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="20" Margin="412,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="56"/>
                 <Button x:Name="button5" Content="Уволить" HorizontalAlignment="Left" Margin="315,429,0,0" VerticalAlignment="Top" Width="74" Click="button5_Click"/>
                 <Button x:Name="button6" Content="Изменить" HorizontalAlignment="Left" Margin="259,404,0,0" VerticalAlignment="Top" Width="99" Click="button6_Click"/>
+                <Button x:Name="button7" Content="Уволить всех" HorizontalAlignment="Left" Margin="52,286,0,0" VerticalAlignment="Top" Width="122" Height="38" Click="button7_Click"/>
             </Grid>
 
         </TabItem>

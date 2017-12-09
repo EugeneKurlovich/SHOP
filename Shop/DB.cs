@@ -90,6 +90,15 @@ namespace Shop
             }
         }
 
+        public void deleteAllEmpl()
+        {
+            using (SqlCommand cmd = new SqlCommand("deleteAllEmployee", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public void addEmploye(string nameEmpl, string surnameEmpl, string post,string log, string pass, double salary)
         {
             using (SqlCommand cmd = new SqlCommand("addNewEmployee", conn))

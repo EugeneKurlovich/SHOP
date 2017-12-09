@@ -91,5 +91,17 @@ namespace Shop
             MessageBox.Show("Выполнено !!!");
             db.closeConnection();
         }
+
+        private void button7_Click(object sender, RoutedEventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            db.deleteAllEmpl();
+            EmployeeList.emplList.Clear();
+            emplGrid.ItemsSource = null;
+            emplGrid.ItemsSource = EmployeeList.emplList;
+            MessageBox.Show("Выполнено !!!");
+            db.closeConnection();
+        }
     }
 }
