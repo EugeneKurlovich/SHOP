@@ -64,6 +64,32 @@ namespace Shop
             }            
         }
 
+        public void deleteEmplId(int id)
+        {
+            using (SqlCommand cmd = new SqlCommand("deleteEmployeeId", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void updateEmployee(int id, string name, string surname, string post, string log, string pass, double salary)
+        {
+            using (SqlCommand cmd = new SqlCommand("updateEmployeeId", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id",id);
+                cmd.Parameters.AddWithValue("@name_employee", name);
+                cmd.Parameters.AddWithValue("@surname_employee", surname);
+                cmd.Parameters.AddWithValue("@post", post);
+                cmd.Parameters.AddWithValue("@empl_login", log);
+                cmd.Parameters.AddWithValue("@empl_passw", pass);
+                cmd.Parameters.AddWithValue("@salary", salary);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public void addEmploye(string nameEmpl, string surnameEmpl, string post,string log, string pass, double salary)
         {
             using (SqlCommand cmd = new SqlCommand("addNewEmployee", conn))

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -67,6 +66,30 @@ namespace Shop
         {
             emplGrid.ItemsSource = null;
             emplGrid.ItemsSource = EmployeeList.emplList;       
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            int id = Convert.ToInt32(textBox4.Text);
+            DB db = new DB();
+            db.openConnection();
+            db.deleteEmplId(id);
+            emplGrid.ItemsSource = null;
+            emplGrid.ItemsSource = EmployeeList.emplList;
+            MessageBox.Show("Выполнено !!!");
+            db.closeConnection();
+        }
+
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeList path = emplGrid.SelectedItem as EmployeeList;
+            DB db = new DB();
+            db.openConnection();
+            db.updateEmployee(path.id, path.name, path.surname, path.post, path.login,
+                path.password, path.salary);
+
+            MessageBox.Show("Выполнено !!!");
+            db.closeConnection();
         }
     }
 }

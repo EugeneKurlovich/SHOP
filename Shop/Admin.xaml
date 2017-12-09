@@ -27,10 +27,13 @@
                 <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="94,157,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="2.308,-1.278"/>
                 <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="94,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                 <Label x:Name="label7" Content="Зарплата" HorizontalAlignment="Left" Margin="15,181,0,0" VerticalAlignment="Top"/>
-                <Label x:Name="label3" Content="Все сотрудники" HorizontalAlignment="Left" Margin="356,10,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label3" Content="Все сотрудники" HorizontalAlignment="Left" Margin="342,15,0,0" VerticalAlignment="Top"/>
                 <DataGrid x:Name="emplGrid" HorizontalAlignment="Left" Height="345" Margin="259,41,0,0" VerticalAlignment="Top" Width="288"/>
-                <Button x:Name="button3" Content="Обновить" HorizontalAlignment="Left" Margin="434,404,0,0" VerticalAlignment="Top" Width="100" Click="button3_Click"/>
-                <Button x:Name="button4" Content="Все сотрудники" HorizontalAlignment="Left" Margin="315,404,0,0" VerticalAlignment="Top" Width="100" Click="button4_Click"/>
+                <Button x:Name="button3" Content="Обновить" HorizontalAlignment="Left" Margin="468,404,0,0" VerticalAlignment="Top" Width="100" Click="button3_Click"/>
+                <Button x:Name="button4" Content="Все сотрудники" HorizontalAlignment="Left" Margin="363,404,0,0" VerticalAlignment="Top" Width="100" Click="button4_Click"/>
+                <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="20" Margin="412,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="56"/>
+                <Button x:Name="button5" Content="Уволить" HorizontalAlignment="Left" Margin="315,429,0,0" VerticalAlignment="Top" Width="74" Click="button5_Click"/>
+                <Button x:Name="button6" Content="Изменить" HorizontalAlignment="Left" Margin="259,404,0,0" VerticalAlignment="Top" Width="99" Click="button6_Click"/>
             </Grid>
 
         </TabItem>
