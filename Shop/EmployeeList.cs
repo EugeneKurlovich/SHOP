@@ -16,5 +16,17 @@ namespace Shop
         public string login { get; set; }
         public string password { get; set; }
         public double salary { get; set; }
+
+       public EmployeeList(int i, string n, string s, string p, string l,
+            string pass, double sal)
+        {
+            id = i;
+            name = n;
+            surname = s;
+            post = p;
+            login = l;
+            password = pass;
+            salary = sal;
+        }
     }
 }

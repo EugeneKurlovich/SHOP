@@ -22,12 +22,6 @@ namespace Shop
             InitializeComponent();
         }
 
-
-        private void prodGrid_Loaded(object sender, RoutedEventArgs e)
-        {
-            prodGrid.ItemsSource = ProductsList.prodList;
-        }
-
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             DB db = new DB();
@@ -56,7 +50,7 @@ namespace Shop
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             prodGrid.ItemsSource = null;
-            prodGrid.ItemsSource = ProductsList.prodList;
+            prodGrid.ItemsSource = ProductsList.prodList; 
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)
@@ -72,7 +66,7 @@ namespace Shop
         private void button3_Click(object sender, RoutedEventArgs e)
         {
             emplGrid.ItemsSource = null;
-            emplGrid.ItemsSource = EmployeeList.emplList;
+            emplGrid.ItemsSource = EmployeeList.emplList;       
         }
     }
 }

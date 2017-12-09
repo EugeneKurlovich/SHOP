@@ -16,5 +16,17 @@ namespace Shop
         public int ammount { get; set; }
         public string category { get; set; }
         public string nameProducer { get; set; }
+
+        public ProductsList(int i, string n, double p, string d, int a, string c, string np)
+        {
+            id = i;
+            name = n;
+            price = p;
+            description = d;
+            ammount = a;
+            category = c;
+            nameProducer = np;
+        }
+
     }
 }

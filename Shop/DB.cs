@@ -27,20 +27,14 @@ namespace Shop
             {
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 var reader = cmd.ExecuteReader();
-
-                ProductsList pl = new ProductsList();
-
+                         
                 if (reader.HasRows)
                 {
+                    ProductsList.prodList.Clear();
                     while (reader.Read())
                     {
-                        pl.id = reader.GetInt32(0);
-                        pl.name = reader.GetString(1);
-                        pl.price = reader.GetDouble(2);
-                        pl.description = reader.GetString(3);
-                        pl.ammount = reader.GetInt32(4);
-                        pl.category = reader.GetString(5);
-                        pl.nameProducer = reader.GetString(6);
+                        ProductsList pl = new ProductsList(reader.GetInt32(0), reader.GetString(1), reader.GetDouble(2), reader.GetString(3),
+                        reader.GetInt32(4), reader.GetString(5), reader.GetString(6));
                         ProductsList.prodList.Add(pl);
                     }
                 }
@@ -51,31 +45,23 @@ namespace Shop
 
         public void getAllEmployee()
         {
-            SqlCommand cmd = new SqlCommand("selectEmployee", conn);
-            
+            using (SqlCommand cmd = new SqlCommand("selectEmployee", conn))
+            {
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 var reader = cmd.ExecuteReader();
 
-               EmployeeList el = new EmployeeList();
-
                 if (reader.HasRows)
                 {
+                    EmployeeList.emplList.Clear();
                     while (reader.Read())
                     {
-                    el.id = reader.GetInt32(0);
-                    el.name = reader.GetString(1);
-                    el.surname = reader.GetString(2);
-                    el.post = reader.GetString(3);
-                    el.login = reader.GetString(4);
-                    el.password = reader.GetString(5);
-                    el.salary = reader.GetDouble(6);
-
-                    EmployeeList.emplList.Add(el);
+                        EmployeeList el = new EmployeeList(reader.GetInt32(0), reader.GetString(1), reader.GetString(2),
+                            reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetDouble(6));
+                        EmployeeList.emplList.Add(el);
                     }
                 }
                 reader.Close();
-
-            
+            }            
         }
 
         public void addEmploye(string nameEmpl, string surnameEmpl, string post,string log, string pass, double salary)
