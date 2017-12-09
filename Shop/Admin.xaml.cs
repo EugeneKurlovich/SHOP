@@ -42,13 +42,13 @@ namespace Shop
         {
             string name = textBox.Text;
             string surname = textBox1.Text;
-           DateTime date = new DateTime(2017,1,1,1,1,1);
             string post = comboBox.Text;
             string log = textBox2.Text;
             string pass = passwordBox.Password;
+            double salary = Convert.ToDouble(textBox3.Text);
             DB db = new DB();
             db.openConnection();
-            db.addEmploye(name, surname, date, post, log, pass);
+            db.addEmploye(name, surname, post, log, pass,salary);
             MessageBox.Show("Выполнено !!!");
             db.closeConnection();
         }
@@ -57,6 +57,22 @@ namespace Shop
         {
             prodGrid.ItemsSource = null;
             prodGrid.ItemsSource = ProductsList.prodList;
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            db.getAllEmployee();
+            emplGrid.ItemsSource = EmployeeList.emplList;
+            MessageBox.Show("Выполнено !!!");
+            db.closeConnection();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            emplGrid.ItemsSource = null;
+            emplGrid.ItemsSource = EmployeeList.emplList;
         }
     }
 }

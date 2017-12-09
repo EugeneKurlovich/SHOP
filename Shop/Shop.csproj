@@ -76,6 +76,7 @@
     <Compile Include="Employe.xaml.cs">
       <DependentUpon>Employe.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeList.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
