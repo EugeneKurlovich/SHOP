@@ -156,5 +156,22 @@ namespace Shop
         {
 
         }
+
+        private void button14_Click(object sender, RoutedEventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            db.getAllProducers();
+            pcGrid.ItemsSource = null;
+            pcGrid.ItemsSource = Producers.producerList;
+            MessageBox.Show("Выполнено !!!");
+            db.closeConnection();
+        }
+
+        private void button17_Click(object sender, RoutedEventArgs e)
+        {
+            pcGrid.ItemsSource = null;
+            pcGrid.ItemsSource = Producers.producerList;
+        }
     }
 }

@@ -68,9 +68,10 @@
                 <TextBox x:Name="textBox10" HorizontalAlignment="Left" Height="23" Margin="223,508,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                 <TextBox x:Name="textBox11" HorizontalAlignment="Left" Height="23" Margin="223,536,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                 <Button x:Name="button13" Content="Добавить товар" HorizontalAlignment="Left" Margin="161,589,0,0" VerticalAlignment="Top" Width="119" Click="button13_Click"/>
-                <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="177" Margin="392,400,0,0" VerticalAlignment="Top" Width="336"/>
+                <DataGrid x:Name="pcGrid" HorizontalAlignment="Left" Height="177" Margin="392,400,0,0" VerticalAlignment="Top" Width="336"/>
                 <Label x:Name="label18" Content="Производители продуктов" HorizontalAlignment="Left" Margin="475,369,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="button14" Content="Все производители" HorizontalAlignment="Left" Margin="515,589,0,0" VerticalAlignment="Top" Width="117"/>
+                <Button x:Name="button14" Content="Все производители" HorizontalAlignment="Left" Margin="515,589,0,0" VerticalAlignment="Top" Width="117" Click="button14_Click"/>
+                <Button x:Name="button17" Content="Обновить" HorizontalAlignment="Left" Margin="423,589,0,0" VerticalAlignment="Top" Width="74" Click="button17_Click"/>
             </Grid>
         </TabItem>
         <TabItem Header="Продажи">
