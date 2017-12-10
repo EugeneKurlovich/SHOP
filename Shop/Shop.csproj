@@ -69,6 +69,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categories.cs" />
     <Compile Include="Client.xaml.cs">
       <DependentUpon>Client.xaml</DependentUpon>
     </Compile>

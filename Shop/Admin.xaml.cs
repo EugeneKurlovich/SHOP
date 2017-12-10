@@ -103,5 +103,32 @@ namespace Shop
             MessageBox.Show("Выполнено !!!");
             db.closeConnection();
         }
+
+        private void button8_Click(object sender, RoutedEventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            ProductsList path = prodGrid.SelectedItem as ProductsList;
+            db.updatePriceProduct(path.id, path.price);
+            MessageBox.Show("Выполнено !!!");
+            db.closeConnection();
+        }
+
+        private void button9_Click(object sender, RoutedEventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            db.getAllCategories();
+            catGrid.ItemsSource = null;
+            catGrid.ItemsSource = Categories.categoriesList;
+            MessageBox.Show("Выполнено !!!");
+            db.closeConnection();
+        }
+
+        private void button10_Click(object sender, RoutedEventArgs e)
+        {
+            catGrid.ItemsSource = null;
+            catGrid.ItemsSource = Categories.categoriesList;
+        }
     }
 }

@@ -74,6 +74,17 @@ namespace Shop
             }
         }
 
+        public void updatePriceProduct(int id, double price)
+        {
+            using (SqlCommand cmd = new SqlCommand("updatePriceProduct", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@price", price);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public void updateEmployee(int id, string name, string surname, string post, string log, string pass, double salary)
         {
             using (SqlCommand cmd = new SqlCommand("updateEmployeeId", conn))
@@ -113,6 +124,26 @@ namespace Shop
                 cmd.ExecuteNonQuery();
             }
 
+        }
+
+        public void getAllCategories()
+        {
+            using (SqlCommand cmd = new SqlCommand("getAllCat", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                var reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    Categories.categoriesList.Clear();
+                    while (reader.Read())
+                    {
+                        Categories catg = new Categories(reader.GetInt32(0), reader.GetString(1));
+                        Categories.categoriesList.Add(catg);
+                    }
+                }
+                reader.Close();
+            }
         }
     }
 }
