@@ -43,6 +43,21 @@ namespace Shop
             }
         }
 
+        public void addNewProduct(string name, double price, int idP, int idC, string desc, int am)
+        {
+            using (SqlCommand cmd = new SqlCommand("addNewProduct", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nameP", name);
+                cmd.Parameters.AddWithValue("@price", price);
+                cmd.Parameters.AddWithValue("@idP", idP);
+                cmd.Parameters.AddWithValue("@idC", idC);
+                cmd.Parameters.AddWithValue("@desc", desc);
+                cmd.Parameters.AddWithValue("@am", am);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public void getAllProducers()
         {
             using (SqlCommand cmd = new SqlCommand("getAllProducers", conn))

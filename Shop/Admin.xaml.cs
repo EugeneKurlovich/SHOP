@@ -154,6 +154,12 @@ namespace Shop
 
         private void button13_Click(object sender, RoutedEventArgs e)
         {
+            DB db = new DB();
+            db.openConnection();
+            db.addNewProduct(textBox6.Text, Convert.ToDouble(textBox7.Text),Convert.ToInt32(textBox8.Text),
+                Convert.ToInt32(textBox9.Text),textBox10.Text, Convert.ToInt32(textBox11.Text));
+            MessageBox.Show("Выполнено !!!");
+            db.closeConnection();
 
         }
 
