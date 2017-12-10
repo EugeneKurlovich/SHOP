@@ -58,6 +58,16 @@ namespace Shop
             }
         }
 
+        public void deleteProductId(int id)
+        {
+            using (SqlCommand cmd = new SqlCommand("deleteProductId", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public void getAllProducers()
         {
             using (SqlCommand cmd = new SqlCommand("getAllProducers", conn))

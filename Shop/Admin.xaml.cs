@@ -179,5 +179,14 @@ namespace Shop
             pcGrid.ItemsSource = null;
             pcGrid.ItemsSource = Producers.producerList;
         }
+
+        private void button18_Click(object sender, RoutedEventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            db.deleteProductId(Convert.ToInt32(textBox12.Text));
+            MessageBox.Show("Выполнено !!!");
+            db.closeConnection();
+        }
     }
 }
