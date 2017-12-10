@@ -126,6 +126,27 @@ namespace Shop
 
         }
 
+        public void setDiscountCategory(int id, int disc)
+        {
+            using (SqlCommand cmd = new SqlCommand("setDiscountCategory", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@discount", disc);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void updateCategory(int id,string newname)
+        {
+            using (SqlCommand cmd = new SqlCommand("updateCategory", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@newname", newname);
+                cmd.ExecuteNonQuery();
+            }
+        }
         public void getAllCategories()
         {
             using (SqlCommand cmd = new SqlCommand("getAllCat", conn))

@@ -130,5 +130,26 @@ namespace Shop
             catGrid.ItemsSource = null;
             catGrid.ItemsSource = Categories.categoriesList;
         }
+
+        private void button11_Click(object sender, RoutedEventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            Categories path = catGrid.SelectedItem as Categories;
+            db.updateCategory(path.id,path.name_category);
+            MessageBox.Show("Выполнено");
+            db.closeConnection();
+        }
+
+        private void button12_Click(object sender, RoutedEventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            Categories path = catGrid.SelectedItem as Categories;
+            int disc = Convert.ToInt32(textBox5.Text);
+            db.setDiscountCategory(path.id,disc);
+            MessageBox.Show("Выполнено");
+            db.closeConnection();
+        }
     }
 }

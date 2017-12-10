@@ -43,13 +43,17 @@
             <Grid>
                 <DataGrid x:Name="prodGrid"  AutoGenerateColumns="True" HorizontalAlignment="Left" Height="248" Margin="46,45,0,0" VerticalAlignment="Top" Width="402"/>
                 <Button x:Name="button1" Content="Обновить" HorizontalAlignment="Left" Margin="90,310,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-                <Button x:Name="button2" Content="Все товары" HorizontalAlignment="Left" Margin="208,310,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
-                <Button x:Name="button8" Content="Изменить" HorizontalAlignment="Left" Margin="315,310,0,0" VerticalAlignment="Top" Width="76" Click="button8_Click"/>
+                <Button x:Name="button2" Content="Все товары" HorizontalAlignment="Left" Margin="187,310,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+                <Button x:Name="button8" Content="Изменить" HorizontalAlignment="Left" Margin="294,310,0,0" VerticalAlignment="Top" Width="76" Click="button8_Click"/>
                 <DataGrid x:Name="catGrid" HorizontalAlignment="Left" Height="248" Margin="453,45,0,0" VerticalAlignment="Top" Width="115"/>
                 <Button x:Name="button9" Content="Категории" HorizontalAlignment="Left" Margin="475,310,0,0" VerticalAlignment="Top" Width="74" Click="button9_Click"/>
                 <Label x:Name="label8" Content="Все товары" HorizontalAlignment="Left" Margin="208,19,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="label9" Content="Все категории" HorizontalAlignment="Left" Margin="475,19,0,0" VerticalAlignment="Top"/>
                 <Button x:Name="button10" Content="Обновить" HorizontalAlignment="Left" Margin="475,335,0,0" VerticalAlignment="Top" Width="76" Click="button10_Click"/>
+                <Button x:Name="button11" Content="Изменить" HorizontalAlignment="Left" Margin="475,360,0,0" VerticalAlignment="Top" Width="76" Click="button11_Click"/>
+                <Button x:Name="button12" Content="Скидка" HorizontalAlignment="Left" Margin="475,385,0,0" VerticalAlignment="Top" Width="74" Click="button12_Click"/>
+                <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="20" Margin="420,385,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
+                <Label x:Name="label10" Content="%" HorizontalAlignment="Left" Margin="395,385,0,0" VerticalAlignment="Top"/>
             </Grid>
         </TabItem>
 
