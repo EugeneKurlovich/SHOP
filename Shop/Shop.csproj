@@ -67,6 +67,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Delivery.cs" />
+    <Compile Include="Sales.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categories.cs" />

@@ -188,5 +188,16 @@ namespace Shop
             MessageBox.Show("Выполнено !!!");
             db.closeConnection();
         }
+
+        private void button15_Click(object sender, RoutedEventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            db.getAllSales();
+            sGrid.ItemsSource = null;
+            sGrid.ItemsSource = Sales.sList;
+            MessageBox.Show("Выполнено !!!");
+            db.closeConnection();
+        }
     }
 }

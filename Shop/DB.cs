@@ -68,6 +68,26 @@ namespace Shop
             }
         }
 
+        public void getAllSales()
+        {
+            using (SqlCommand cmd = new SqlCommand("getAllSales", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                var reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    Sales.sList.Clear();
+                    while (reader.Read())
+                    {
+                        Sales s = new Sales(reader.GetInt32(0), reader.GetDateTime(1).ToString(), reader.GetInt32(2),reader.GetString(3), reader.GetInt32(4), reader.GetDouble(5));
+                        Sales.sList.Add(s);
+                    }
+                }
+                reader.Close();
+            }
+        }
+
         public void getAllProducers()
         {
             using (SqlCommand cmd = new SqlCommand("getAllProducers", conn))
