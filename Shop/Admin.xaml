@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Admin" Height="677.694" Width="764.656">
     <TabControl>
-        <TabItem Header="Добавить">
+        <TabItem Header="Управление персоналом">
 
             <Grid Margin="0,-3,0,3">
                 <Button x:Name="button" Content="Добавить" Margin="52,238,558,345" Click="button_Click"/>
@@ -39,7 +39,7 @@
 
         </TabItem>
 
-        <TabItem Header="Все товары">
+        <TabItem Header="Товары, категории, производители">
             <Grid>
                 <DataGrid x:Name="prodGrid"  AutoGenerateColumns="True" HorizontalAlignment="Left" Height="248" Margin="46,45,0,0" VerticalAlignment="Top" Width="402"/>
                 <Button x:Name="button1" Content="Обновить" HorizontalAlignment="Left" Margin="90,310,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
@@ -67,13 +67,24 @@
                 <TextBox x:Name="textBox9" HorizontalAlignment="Left" Height="23" Margin="223,482,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                 <TextBox x:Name="textBox10" HorizontalAlignment="Left" Height="23" Margin="223,508,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                 <TextBox x:Name="textBox11" HorizontalAlignment="Left" Height="23" Margin="223,536,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-                <Button x:Name="button13" Content="Добавить товар" HorizontalAlignment="Left" Margin="161,589,0,0" VerticalAlignment="Top" Width="119"/>
+                <Button x:Name="button13" Content="Добавить товар" HorizontalAlignment="Left" Margin="161,589,0,0" VerticalAlignment="Top" Width="119" Click="button13_Click"/>
                 <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="177" Margin="392,400,0,0" VerticalAlignment="Top" Width="336"/>
                 <Label x:Name="label18" Content="Производители продуктов" HorizontalAlignment="Left" Margin="475,369,0,0" VerticalAlignment="Top"/>
                 <Button x:Name="button14" Content="Все производители" HorizontalAlignment="Left" Margin="515,589,0,0" VerticalAlignment="Top" Width="117"/>
             </Grid>
         </TabItem>
-
+        <TabItem Header="Продажи">
+            <Grid>
+                <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Height="331" Margin="48,25,0,0" VerticalAlignment="Top" Width="640"/>
+                <Button x:Name="button15" Content="Продажи" HorizontalAlignment="Left" Margin="323,382,0,0" VerticalAlignment="Top" Width="90" Height="40"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Поставки">
+            <Grid>
+                <DataGrid x:Name="dataGrid2" HorizontalAlignment="Left" Height="282" Margin="63,10,0,0" VerticalAlignment="Top" Width="655"/>
+                <Button x:Name="button16" Content="Поставки" HorizontalAlignment="Left" Margin="307,310,0,0" VerticalAlignment="Top" Width="137" Height="45"/>
+            </Grid>
+        </TabItem>
 
     </TabControl>
 

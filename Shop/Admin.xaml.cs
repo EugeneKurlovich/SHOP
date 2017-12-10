@@ -151,5 +151,10 @@ namespace Shop
             MessageBox.Show("Выполнено");
             db.closeConnection();
         }
+
+        private void button13_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
