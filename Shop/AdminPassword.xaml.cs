@@ -23,8 +23,7 @@ namespace Shop
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string admPass = passwordBox.Password;
-            if (admPass.Equals("adm"))
+            if (passwordBox.Password.Equals("MainAdmin") && textBox.Text.Equals("MainAdmin"))
             {
                 Admin admin = new Admin();
                 admin.Show();
@@ -32,8 +31,22 @@ namespace Shop
             }
             else
             {
-                MessageBox.Show("Неправильный пароль");
+                DB db = new DB();
+                db.openConnection();
+               if(db.getAllUsers(textBox.Text, passwordBox.Password))
+                {
+                    db.closeConnection();
+                    Admin admin = new Admin();
+                    admin.Show();
+                    this.Close();
+                }
+                else
+                {
+                    db.closeConnection();
+                    MessageBox.Show("Администратор не найден!!!");
+                }                               
             }
+            
         }
     }
 }
