@@ -21,6 +21,28 @@ namespace Shop
             conn.Close();
         }
 
+        public void getAllDelivery()
+        {
+            using (SqlCommand cmd = new SqlCommand("getAllDelivery", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                var reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                     Delivery.dList.Clear();
+                    while (reader.Read())
+                    {
+                        Delivery d = new Delivery(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetInt32(3),
+                        reader.GetString(4),reader.GetInt32(5),reader.GetString(6), reader.GetInt32(7), reader.GetDouble(8));
+                        Delivery.dList.Add(d);
+                    }
+                }
+                reader.Close();
+
+            }
+        }
+
         public void getAllProducts()
         {
             using (SqlCommand cmd = new SqlCommand("selectProducts", conn))

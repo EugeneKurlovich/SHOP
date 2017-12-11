@@ -199,5 +199,22 @@ namespace Shop
             MessageBox.Show("Выполнено !!!");
             db.closeConnection();
         }
+
+        private void button16_Click(object sender, RoutedEventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            db.getAllDelivery();
+            dGrid.ItemsSource = null;
+            dGrid.ItemsSource = Delivery.dList;
+            MessageBox.Show("Выполнено !!!");
+            db.closeConnection();
+        }
+
+        private void button19_Click(object sender, RoutedEventArgs e)
+        {
+            dGrid.ItemsSource = null;
+            dGrid.ItemsSource = Delivery.dList;
+        }
     }
 }
