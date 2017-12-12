@@ -119,6 +119,20 @@ namespace Shop
             }
         }
 
+        public void startDelivery(int id, double price, int idP, string log, int ammount)
+        {
+            using (SqlCommand cmd = new SqlCommand("startDelivery", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@price", price);
+                cmd.Parameters.AddWithValue("@idP", idP);
+                cmd.Parameters.AddWithValue("@log", log);
+                cmd.Parameters.AddWithValue("@am", ammount);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public void addNewProduct(string name, double price, int idP, int idC, string desc, int am)
         {
             using (SqlCommand cmd = new SqlCommand("addNewProduct", conn))

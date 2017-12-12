@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shop"
         mc:Ignorable="d"
-        Title="Client" Height="322" Width="569" ResizeMode="NoResize">
+        Title="Client" Height="322" Width="577" ResizeMode="NoResize">
     <Grid>
         <DataGrid x:Name="pGrid" HorizontalAlignment="Left" Height="180" Margin="10,27,0,0" VerticalAlignment="Top" Width="296"/>
         <DataGrid x:Name="cGrid" HorizontalAlignment="Left" Height="180" Margin="321,27,0,0" VerticalAlignment="Top" Width="217"/>
