@@ -44,7 +44,7 @@
                 <DataGrid x:Name="prodGrid"  AutoGenerateColumns="True" HorizontalAlignment="Left" Height="248" Margin="46,45,0,0" VerticalAlignment="Top" Width="402"/>
                 <Button x:Name="button1" Content="Обновить" HorizontalAlignment="Left" Margin="90,310,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
                 <Button x:Name="button2" Content="Все товары" HorizontalAlignment="Left" Margin="187,310,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
-                <Button x:Name="button8" Content="Изменить" HorizontalAlignment="Left" Margin="294,310,0,0" VerticalAlignment="Top" Width="76" Click="button8_Click"/>
+                <Button x:Name="button8" Content="Изменить цену" HorizontalAlignment="Left" Margin="294,310,0,0" VerticalAlignment="Top" Width="100" Click="button8_Click"/>
                 <DataGrid x:Name="catGrid" HorizontalAlignment="Left" Height="248" Margin="471,50,0,0" VerticalAlignment="Top" Width="270"/>
                 <Button x:Name="button9" Content="Категории" HorizontalAlignment="Left" Margin="475,310,0,0" VerticalAlignment="Top" Width="74" Click="button9_Click"/>
                 <Label x:Name="label8" Content="Все товары" HorizontalAlignment="Left" Margin="208,19,0,0" VerticalAlignment="Top"/>

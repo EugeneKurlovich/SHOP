@@ -43,6 +43,38 @@ namespace Shop
             }
         }
 
+        public void buySelectedProduct(int id, int ammount)
+        {
+            using (SqlCommand cmd = new SqlCommand("buySelectedProduct", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@am", ammount);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void filtrProduct(int id)
+        {
+            using (SqlCommand cmd = new SqlCommand("filtrProduct", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                var reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    ProductsList.prodList.Clear();
+                    while (reader.Read())
+                    {
+                        ProductsList pl = new ProductsList(reader.GetInt32(0), reader.GetString(1), reader.GetDouble(2), reader.GetString(3),
+                        reader.GetInt32(4), reader.GetString(5), reader.GetString(6));
+                        ProductsList.prodList.Add(pl);
+                    }
+                }
+                reader.Close();
+            }
+        }
+
         public void getAllProducts()
         {
             using (SqlCommand cmd = new SqlCommand("selectProducts", conn))
