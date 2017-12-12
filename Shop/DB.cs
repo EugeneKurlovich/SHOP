@@ -54,6 +54,28 @@ namespace Shop
             }
         }
 
+        public bool getAllEmplLogPass(string l, string p)
+        {
+            using (SqlCommand cmd = new SqlCommand("getAllUsers", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                var reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        if (reader.GetString(0).Equals(l) & reader.GetString(1).Equals(p) & reader.GetString(2).Equals("Продавец"))
+                        {
+                            return true;
+                        }
+                    }
+                }
+                reader.Close();
+            }
+            return false;
+        }
+
         public void filtrProduct(int id)
         {
             using (SqlCommand cmd = new SqlCommand("filtrProduct", conn))

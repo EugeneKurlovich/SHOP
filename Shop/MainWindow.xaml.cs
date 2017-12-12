@@ -37,8 +37,8 @@ namespace Shop
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            Employe empl = new Employe();
-            empl.Show();
+            AuthEmpl a = new AuthEmpl();
+            a.Show();
             mw.Close();
         }
     }

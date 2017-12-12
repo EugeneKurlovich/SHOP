@@ -67,6 +67,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AuthEmpl.xaml.cs">
+      <DependentUpon>AuthEmpl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Delivery.cs" />
     <Compile Include="Sales.cs" />
   </ItemGroup>
@@ -120,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthEmpl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
