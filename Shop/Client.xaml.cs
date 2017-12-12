@@ -71,5 +71,12 @@ namespace Shop
             MessageBox.Show("Выполнено");
             db.closeConnection();
         }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mv = new MainWindow();
+            mv.Show();
+            this.Close();
+        }
     }
 }

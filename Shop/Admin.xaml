@@ -74,6 +74,7 @@
                 <Button x:Name="button17" Content="Обновить" HorizontalAlignment="Left" Margin="423,589,0,0" VerticalAlignment="Top" Width="74" Click="button17_Click"/>
                 <Button x:Name="button18" Content="Убрать с продажи" HorizontalAlignment="Left" Margin="64,354,0,0" VerticalAlignment="Top" Width="118" Click="button18_Click"/>
                 <TextBox x:Name="textBox12" HorizontalAlignment="Left" Height="20" Margin="25,354,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="34"/>
+                <Button x:Name="button20" Content="HOME" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="button20_Click"/>
             </Grid>
         </TabItem>
         <TabItem Header="Продажи">

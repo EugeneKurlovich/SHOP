@@ -18,6 +18,7 @@
         <Label x:Name="label2" Content="Количество" HorizontalAlignment="Left" Margin="116,241,0,0" VerticalAlignment="Top"/>
         <Button x:Name="button3" Content="Обновить" HorizontalAlignment="Left" Margin="36,244,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click"/>
         <Button x:Name="button4" Content="Фильтр" HorizontalAlignment="Left" Margin="377,244,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click"/>
+        <Button x:Name="button5" Content="HOME" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="75" Click="button5_Click"/>
 
     </Grid>
 </Window>

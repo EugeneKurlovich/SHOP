@@ -216,5 +216,12 @@ namespace Shop
             dGrid.ItemsSource = null;
             dGrid.ItemsSource = Delivery.dList;
         }
+
+        private void button20_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mv = new MainWindow();
+            mv.Show();
+            this.Close();
+        }
     }
 }
