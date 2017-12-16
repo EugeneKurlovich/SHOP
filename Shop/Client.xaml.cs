@@ -21,10 +21,11 @@ namespace Shop
             InitializeComponent();
         }
 
+        string connStr = @"Data Source=EUGENEPC;Initial Catalog=StoreDB;User Id = client; Password = qwe123";
         private void button_Click(object sender, RoutedEventArgs e)
         {
             DB db = new DB();
-            db.openConnection();
+            db.openConnection(connStr);
             db.getAllCategories();
             cGrid.ItemsSource = null;
             cGrid.ItemsSource = Categories.categoriesList;
@@ -35,7 +36,7 @@ namespace Shop
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             DB db = new DB();
-            db.openConnection();
+            db.openConnection(connStr);
             db.getAllProducts();
             pGrid.ItemsSource = ProductsList.prodList;
             MessageBox.Show("Выполнено !!!");
@@ -53,7 +54,7 @@ namespace Shop
 
             ProductsList path = pGrid.SelectedItem as ProductsList;
             DB db = new DB();
-            db.openConnection();
+            db.openConnection(connStr);
             db.buySelectedProduct(path.id, Convert.ToInt32(textBox.Text));      
             MessageBox.Show("Куплено");
             db.closeConnection();
@@ -63,7 +64,7 @@ namespace Shop
         {
             Categories path = cGrid.SelectedItem as Categories;
             DB db = new DB();
-            db.openConnection();
+            db.openConnection(connStr);
             ProductsList.prodList.Clear();
             db.filtrProduct(path.id);
             pGrid.ItemsSource = null;

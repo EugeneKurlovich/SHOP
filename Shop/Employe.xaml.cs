@@ -21,6 +21,7 @@ namespace Shop
             InitializeComponent();
         }
 
+        string connStr = @"Data Source=EUGENEPC;Initial Catalog=StoreDB;User Id = empl; Password = qwe123";
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             prodGrid.ItemsSource = null;
@@ -30,7 +31,7 @@ namespace Shop
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             DB db = new DB();
-            db.openConnection();
+            db.openConnection(connStr);
             db.getAllProducts();
             prodGrid.ItemsSource = ProductsList.prodList;
             MessageBox.Show("Выполнено !!!");
@@ -40,7 +41,7 @@ namespace Shop
         private void button9_Click(object sender, RoutedEventArgs e)
         {
             DB db = new DB();
-            db.openConnection();
+            db.openConnection(connStr);
             db.getAllCategories();
             catGrid.ItemsSource = null;
             catGrid.ItemsSource = Categories.categoriesList;
@@ -57,7 +58,7 @@ namespace Shop
         private void button13_Click(object sender, RoutedEventArgs e)
         {
             DB db = new DB();
-            db.openConnection();
+            db.openConnection(connStr);
             db.addNewProduct(textBox6.Text, Convert.ToDouble(textBox7.Text), Convert.ToInt32(textBox8.Text),
                 Convert.ToInt32(textBox9.Text), textBox10.Text, Convert.ToInt32(textBox11.Text));
             MessageBox.Show("Выполнено !!!");
@@ -73,7 +74,7 @@ namespace Shop
         private void button14_Click(object sender, RoutedEventArgs e)
         {
             DB db = new DB();
-            db.openConnection();
+            db.openConnection(connStr);
             db.getAllProducers();
             pcGrid.ItemsSource = null;
             pcGrid.ItemsSource = Producers.producerList;
@@ -84,7 +85,7 @@ namespace Shop
         private void button_Click(object sender, RoutedEventArgs e)
         {
             DB db = new DB();
-            db.openConnection();
+            db.openConnection(connStr);
             ProductsList path = prodGrid.SelectedItem as ProductsList;
             db.startDelivery(path.id, path.price, Convert.ToInt32(textBox.Text), textBox1.Text, Convert.ToInt32(textBox2.Text) );
             MessageBox.Show("Выполнено !!!");

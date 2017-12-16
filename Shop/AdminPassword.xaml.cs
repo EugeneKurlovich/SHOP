@@ -20,7 +20,7 @@ namespace Shop
         {
             InitializeComponent();
         }
-
+        string connStr = @"Data Source=EUGENEPC;Initial Catalog=StoreDB;Integrated Security=True";
         private void button_Click(object sender, RoutedEventArgs e)
         {
             if (passwordBox.Password.Equals("MainAdmin") && textBox.Text.Equals("MainAdmin"))
@@ -32,7 +32,7 @@ namespace Shop
             else
             {
                 DB db = new DB();
-                db.openConnection();
+                db.openConnection(connStr);
                if(db.getAllUsers(textBox.Text, passwordBox.Password))
                 {
                     db.closeConnection();

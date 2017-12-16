@@ -22,10 +22,11 @@ namespace Shop
             InitializeComponent();
         }
 
+        string connStr = @"Data Source=EUGENEPC;Initial Catalog=StoreDB;Integrated Security=True";
         private void button_Click(object sender, RoutedEventArgs e)
         {
             DB db = new DB();
-            db.openConnection();
+            db.openConnection(connStr);
             if (db.getAllEmplLogPass(textBox.Text, textBox1.Text))
             {
                 db.closeConnection();

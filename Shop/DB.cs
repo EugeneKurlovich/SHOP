@@ -8,11 +8,10 @@ namespace Shop
 {
     class DB
     {
-        static string connStr = @"Data Source=EUGENEPC;Initial Catalog=StoreDB;Integrated Security=True";
-        static SqlConnection conn = new SqlConnection(connStr);
-
-        public void openConnection()
-        {
+        SqlConnection conn;
+        public void openConnection(string connStr)
+        {         
+          conn = new SqlConnection(connStr);
             conn.Open();
         }
 
