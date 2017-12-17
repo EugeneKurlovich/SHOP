@@ -33,7 +33,7 @@ namespace Shop
                     while (reader.Read())
                     {
                         Delivery d = new Delivery(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetInt32(3),
-                        reader.GetString(4),reader.GetInt32(5),reader.GetString(6), reader.GetInt32(7), reader.GetDouble(8));
+                        reader.GetString(4),reader.GetInt32(5),reader.GetString(6), reader.GetInt32(7), reader.GetDouble(8), reader.GetDateTime(9).ToString());
                         Delivery.dList.Add(d);
                     }
                 }

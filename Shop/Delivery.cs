@@ -19,6 +19,7 @@ namespace Shop
         public string name_product { set; get; }
         public int ammount { set; get; }
         public double sum_delivery { set; get; }
+        public string date_delivery { set; get; }
 
 
         public Delivery()
@@ -26,7 +27,8 @@ namespace Shop
 
         }
 
-        public Delivery(int i, int idP, string nP,int idE, string l,int idPr, string nPr, int a, double s)
+        public Delivery(int i, int idP, string nP,int idE, 
+            string l,int idPr, string nPr, int a, double s, string d)
         {
             id = i;
             id_producer = idP;
@@ -37,6 +39,7 @@ namespace Shop
             name_product = nPr;
             ammount = a;
             sum_delivery = s;
+            date_delivery = d;
         }
     }
 }
