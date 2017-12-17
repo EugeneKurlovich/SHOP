@@ -54,3 +54,6 @@ ammount int not null,
 sum_delivery double precision not null,
 date_delivery date not null
 );
+
+select * from delivery
+delete from delivery
