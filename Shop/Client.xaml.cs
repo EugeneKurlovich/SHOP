@@ -69,8 +69,16 @@ namespace Shop
             {
                 ProductsList path = pGrid.SelectedItem as ProductsList;
                 DB db = new DB();
-                db.buySelectedProduct(path.id, Convert.ToInt32(textBox.Text));
-                MessageBox.Show("Куплено");
+                db.openConnection(connStr);
+                if (path.ammount < Convert.ToInt32(textBox.Text))
+                {
+                    MessageBox.Show("Отсутствует введённое количество товара");
+                }
+                else
+                {
+                    db.buySelectedProduct(path.id, Convert.ToInt32(textBox.Text));
+                    MessageBox.Show("Куплено");
+                }
                 db.closeConnection();
             }
             catch

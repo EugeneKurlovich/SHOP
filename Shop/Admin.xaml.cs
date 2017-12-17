@@ -51,9 +51,10 @@ namespace Shop
                 string log = textBox2.Text;
                 string pass = passwordBox.Password;
                 double salary = Convert.ToDouble(textBox3.Text);
-                if (salary == 0 || salary < 0)
+                if (salary == 0 || salary < 0 || name.Length == 0 || surname.Length == 0 || post.Length == 0
+                    || log.Length == 0 || pass.Length == 0)
                 {
-                    MessageBox.Show("Проверьте зарплату");
+                    MessageBox.Show("Проверьте данные сотрудника");
                 }
                 else
                 {
