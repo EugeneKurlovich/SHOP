@@ -50,6 +50,7 @@ GO
 
 InsertRandValuesProducts
 
+drop index 
 
 select id_cat from products;
 create nonclustered index Products_index

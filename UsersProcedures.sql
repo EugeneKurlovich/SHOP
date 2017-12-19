@@ -1,5 +1,6 @@
 use StoreDB;
 
+select * from products;
 go
 alter procedure addNewEmployee
 (
@@ -31,11 +32,14 @@ alter procedure selectEmployee
 as select id_employee, name_employee, surname_employee, post, empl_login, empl_passw, salary 
 from employee;
 
+
+
 go
 alter procedure deleteEmployeeId(@id int)
 as
 begin
 begin try
+ delete from delivery where id_employee = @id;
  delete from employee where id_employee = @id;
 end try
 begin catch
@@ -61,6 +65,7 @@ alter procedure deleteAllEmployee
 as
 begin
 begin try
+ delete from delivery;
  delete from employee;
 end try
 begin catch 
@@ -167,6 +172,10 @@ as  select id_delivery,id_producer, (select name_producer from producer where  p
 id_employee,  ( select empl_login from employee where delivery.id_employee = employee.id_employee),id_product, (select name_product from products where products.id_product = delivery.id_product),
 ammount, sum_delivery, date_delivery from delivery;
 
+
+
+select * from products;
+execute buySelectedProduct 3,136
 go
 alter procedure buySelectedProduct(@id int, @am int)
  as begin 
@@ -175,6 +184,7 @@ alter procedure buySelectedProduct(@id int, @am int)
  declare @amm int;
  SET @amm = (select ammount from products where id_product = @id);
  if @amm >@am
+ BEGIN
  update products set ammount = ammount - @am where id_product = @id;
   declare @s int;
  declare @date date;
@@ -184,6 +194,7 @@ alter procedure buySelectedProduct(@id int, @am int)
  SET @date = GETDATE();
  insert into sales(date_sales,id_product,ammount,sum_sales) values
  (@date, @id,@am,@s);
+ END
  end try
  begin catch
  print error_message()
